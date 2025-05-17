@@ -1,0 +1,18 @@
+<div *ngFor="let item of exams" class="card-container">
+  <mat-card class="exam-card" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="avatar-img" [ngStyle]="{'background-image': 'url(' + item.patient?.photoUrl + ')'}"></div>
+      <mat-card-title>{{ item.patient?.fullName }}</mat-card-title>
+      <mat-card-subtitle>{{ item.patient?.birthDate | date:'longDate' }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="item.patient?.photoUrl" alt="{{ item.patient?.fullName }}" />
+
+    <mat-card-content>
+      <p><strong>Exam Date:</strong> {{ item.exam.examDate | date:'longDate' }}</p>
+      <p><strong>Examiner:</strong> {{ item.examiner?.fullName }}</p>
+      <p><strong>NPI:</strong> {{ item.examiner?.nationalProviderIdentifier }}</p>
+      <p><strong>Total Score:</strong> {{ item.exam.totalScore }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

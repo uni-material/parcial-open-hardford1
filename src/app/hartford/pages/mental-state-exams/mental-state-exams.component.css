@@ -1,0 +1,15 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.exam-card {
+  width: 350px;
+}
+
+.avatar-img {
+  background-size: cover;
+  background-position: center;
+}
